@@ -107,54 +107,54 @@
 }
 
 @media (max-width: 850px) {
-  .checkout {
+  .checkout-page {
     width: 100vw;
     margin: 0;
     height: 80vh;
   }
-  .checkout h1 {
+  .checkout-page h1 {
     margin: 1rem 0;
     text-align: center;
     font-size: 1.5rem;
   }
-  .checkout .checkout-container {
+  .checkout-page .checkout-container {
     padding-top: 1rem;
   }
-  .checkout .item-total {
+  .checkout-page .item-total {
     display: none;
   }
-  .checkout .item-total .item, .checkout .item-total .total {
+  .checkout-page .item-total .item, .checkout-page .item-total .total {
     font-size: 1rem;
   }
-  .checkout .checkout-item-container {
+  .checkout-page .checkout-item-container {
     height: 80%;
   }
-  .checkout .checkout-item-container .checkout-product {
+  .checkout-page .checkout-item-container .checkout-product {
     padding: 1rem 0.5rem;
     flex-direction: column;
     border-bottom: 1px solid rgba(0, 0, 0, 0.259);
   }
-  .checkout .checkout-item-container .product-container {
+  .checkout-page .checkout-item-container .product-container {
     width: 100%;
     align-items: flex-start;
     max-height: unset;
   }
-  .checkout .checkout-item-container .product-container .checkout-quantity-price {
+  .checkout-page .checkout-item-container .product-container .checkout-quantity-price {
     font-size: 0.9rem;
   }
-  .checkout .subtotal {
+  .checkout-page .subtotal {
     padding: 1rem;
   }
-  .checkout .subtotal h2 {
+  .checkout-page .subtotal h2 {
     font-size: 1.2rem;
   }
-  .checkout .subtotal .checkout-btn {
+  .checkout-page .subtotal .checkout-btn {
     font-size: 1rem;
     padding: 0.7rem 1.5rem;
   }
 }
 @media (min-width: 800px) and (max-width: 850px) {
-  .checkout {
+  .checkout-page {
     width: 80vw;
     margin: auto;
   }

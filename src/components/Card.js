@@ -4,7 +4,6 @@ import {faShoppingCart} from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom";
 import { useContext, useRef } from "react";
 import { Valuables } from "../App";
-import { UserVerification } from "../functions/User-Verification";
 import axios from "axios";
 
 
@@ -45,7 +44,7 @@ export function Card (props) {
     }
 
     async function addFavorites (id) {
-        UserVerification()
+        if (!token) {return alert('User must be signed in')}
         let firstRequest = await axios.post('https://eden-react-backend.herokuapp.com/shop/markFavorite', {id : id}, {
             headers : {
                 'authorization' : `Bearer ${token}`,
@@ -70,6 +69,10 @@ export function Card (props) {
             favButton.current.classList.replace('marked', 'unmarked')
             console.clear()
             return alert('Item removed from favorites')
+        }
+        if (!firstRequest && !secondRequest) {
+            localStorage.removeItem('token')
+            return alert('User must be logged in')
         }
     }
 

@@ -4,15 +4,20 @@ import {faShoppingCart} from '@fortawesome/free-solid-svg-icons'
 import {faInstagram, faFacebook, faTwitter, faWhatsapp} from '@fortawesome/free-brands-svg-icons'
 import { useLocation } from 'react-router-dom'
 import '../styles/css/Product.css'
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useRef, useState } from "react"
 import { LoadingSpinner } from "../components/Loading"
+import { Valuables } from "../App"
+import axios from "axios"
 
 
 export function Product () {
     let internationalNumberFormat = new Intl.NumberFormat('en-US')
+    const token = localStorage.getItem('token')
+    const { user, dispatch } = useContext(Valuables)
     const location = useLocation()
     const product = location.state
     const [loading, setLoading] = useState(false)
+    const favButton = useRef()
 
     useEffect(()=>{
         setLoading(true)
@@ -20,6 +25,66 @@ export function Product () {
             setLoading(false)
         }, 1500)
     }, [])
+
+    function addToCart (product) {
+        let items = localStorage.getItem('cart') || '{}'
+        items = JSON.parse(items)
+        
+        
+        const { name, price, quantity } = product
+        if (quantity < 1) {
+            return alert('Product is out of stock')
+        }
+        const id = product._id
+        const image = product.images[0].filePath
+        if (items[id]) {
+            items[id].productQuantity += 1
+        }else{
+            const productQuantity = 1
+            items[id] = {
+                id : id,
+                name : name,
+                price : price,
+                productQuantity : productQuantity,
+                image : image
+            }
+        }
+        dispatch({ type : 'update cart', payload : items })
+        alert('Your Item has been added to the Cart')
+    }
+
+    async function addFavorites (id) {
+        if (!token) {return alert('User must be signed in')}
+        let firstRequest = await axios.post('https://eden-react-backend.herokuapp.com/shop/markFavorite', {id : id}, {
+            headers : {
+                'authorization' : `Bearer ${token}`,
+                'Content-Type' : 'application/json'
+            }
+        }).then(res=>res.data).catch(err=>{return})
+        
+        if (firstRequest?.message === 'Marked as favorite') {
+            favButton.current.classList.replace('unmarked', 'marked')
+            console.clear()
+            return alert('Item added to favorites')
+        }
+        
+        let secondRequest = await axios.post('https://eden-react-backend.herokuapp.com/shop/unmarkFavorite', {id : id}, {
+            headers : {
+                'authorization' : `Bearer ${token}`,
+                'Content-Type' : 'application/json'
+            }
+        }).then(res=>res.data).catch(err=>{return})
+
+        if (secondRequest?.message === 'Unmarked as favorite') {
+            favButton.current.classList.replace('marked', 'unmarked')
+            console.clear()
+            return alert('Item removed from favorites')
+        }
+        if (!firstRequest && !secondRequest) {
+            localStorage.removeItem('token')
+            return alert('User must be logged in')
+        }
+    }
 
     return (
         <>
@@ -37,8 +102,8 @@ export function Product () {
                                 <p className="out-of-stock">{product.quantity < 1 ? 'Out of Stock' : null}</p>
                                 <h2 className="product-price">₦{internationalNumberFormat.format(product.price)}</h2>
                                 <div className="fav-cart">
-                                    <button className="cart"><FontAwesomeIcon icon={faShoppingCart}/> Add to Cart</button>
-                                    <button className="unmarked"><FontAwesomeIcon icon={faHeart}/></button>
+                                    <button onClick={(e)=>addToCart(product)} className="cart"><FontAwesomeIcon icon={faShoppingCart}/> Add to Cart</button>
+                                    <button onClick={(e)=>addFavorites(product._id)} className={user?.role === 'user' && user?.favorites?.includes(product._id) ? 'marked' : 'unmarked'} ref={favButton} ><FontAwesomeIcon icon={faHeart}/></button>
                                 </div>
                                 <div className="share">
                                     <h4>Share this product:</h4>

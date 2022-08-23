@@ -1,0 +1,69 @@
+@import './mixins';
+@import './variables';
+
+.account .favorites{
+    background-color: white;
+    width: 80%;
+    border-radius: 10px;
+    padding-bottom: 3rem;
+    @include alignCenterWithoutJustifyContent;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .fav-item-cont{
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: 17rem;
+        width: 12rem;
+        overflow: hidden;
+        padding: .5rem;
+        margin: 1rem;
+        transition: box-shadow .3s ease-in-out;
+
+        &:hover{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        }
+        & img{
+            width: 100%;
+            height: 11rem;
+        }
+        & p{
+            color: black;
+            margin: .5rem 0;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            font-size: .9rem;
+        }
+        & button{
+            width: 80%;
+            margin: 0 auto;
+            @include justify-content(center);
+            border: none;
+            padding: .5rem;
+            background-color: crimson;
+            color: white;
+            border-radius: 10px;
+            font-size: .85rem;
+            transition: $backgroundColorTransition;
+            &:hover{
+                background-color: $crimsonColorHoverChange;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+@media (max-width: 850px) {
+    .account-user .fav-item-cont{
+        width: 9rem;
+        height: 15rem;
+        & img{
+            height: 9rem;
+        }
+        & button{
+            font-size: .75rem;
+        }
+    }
+}

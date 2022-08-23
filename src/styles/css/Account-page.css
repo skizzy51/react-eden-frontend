@@ -1,0 +1,232 @@
+.account {
+  margin: 0 auto;
+  max-width: 90vw;
+  margin-top: 3vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.account-user {
+  background-color: white;
+  width: 80%;
+  border-radius: 10px;
+  padding-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.account-user .user-icon {
+  height: 8rem;
+  margin-top: 1rem;
+  color: rgb(190, 190, 190);
+}
+.account-user .username {
+  margin: 0;
+  margin-top: 0.5rem;
+}
+.account-user .change-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  margin-top: 4rem;
+}
+.account-user .change-detail .edit-btn {
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+  margin: 0 1rem;
+}
+.account-user .change-detail .edit-btn:hover {
+  background-color: rgb(221, 221, 221);
+}
+.account-user .change-username, .account-user .change-password {
+  width: 50%;
+  display: grid;
+  justify-content: center;
+}
+.account-user .change-username {
+  border-right: 1px black solid;
+}
+.account-user .change-username .username-input-hidden {
+  display: none;
+}
+.account-user .change-username .username-input-shown {
+  position: relative;
+  margin-top: 2rem;
+}
+.account-user .change-username .username-input-shown .input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3rem;
+  width: 100%;
+  padding-left: 0.5rem;
+}
+.account-user .change-username .username-input-shown .label {
+  position: absolute;
+  left: 1rem;
+  top: 15px;
+  cursor: text;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+}
+.account-user .change-username .username-input-shown .input:not(:-moz-placeholder-shown).input:not(:focus) ~ .label {
+  top: -10px;
+  font-size: 0.7rem;
+  left: 0.3rem;
+  padding: 0.3rem;
+}
+.account-user .change-username .username-input-shown .input:not(:-ms-input-placeholder).input:not(:focus) ~ .label {
+  top: -10px;
+  font-size: 0.7rem;
+  left: 0.3rem;
+  padding: 0.3rem;
+}
+.account-user .change-username .username-input-shown .input:focus ~ .label,
+.account-user .change-username .username-input-shown .input:not(:placeholder-shown).input:not(:focus) ~ .label {
+  top: -10px;
+  font-size: 0.7rem;
+  left: 0.3rem;
+  padding: 0.3rem;
+}
+.account-user .change-username .username-input-shown button {
+  border: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 5rem;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  background-color: crimson;
+  color: white;
+  transition: background-color 0.3s ease-in-out;
+}
+.account-user .change-username .username-input-shown button:hover {
+  background-color: rgb(139, 25, 48);
+}
+.account-user .change-password {
+  border-left: 1px black solid;
+}
+.account-user .change-password .password-input-hidden {
+  display: none;
+}
+.account-user .change-password .password-input-shown {
+  display: flex;
+  flex-direction: column;
+}
+.account-user .change-password .password-input-shown label {
+  margin-top: 2rem;
+  font-weight: 600;
+}
+.account-user .change-password .password-input-shown input {
+  height: 3rem;
+  margin-top: 0.3rem;
+  padding-left: 0.5rem;
+}
+.account-user .change-password .password-input-shown button {
+  display: flex;
+  border: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 0 auto;
+  margin-top: 2rem;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  background-color: crimson;
+  color: white;
+  transition: background-color 0.3s ease-in-out;
+}
+.account-user .change-password .password-input-shown button:hover {
+  background-color: rgb(139, 25, 48);
+}
+.account-user .delete-account {
+  margin-top: 3rem;
+  border-radius: 10px;
+  padding: 0.7rem 1.5rem;
+  transition: transform 0.3s ease-in-out;
+}
+.account-user .delete-account:hover {
+  transform: scale(105%);
+}
+
+.account-menu {
+  background-color: white;
+  width: 15%;
+  border-radius: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+.account-menu button {
+  border: none;
+  width: 100%;
+  padding: 1rem;
+  background-color: transparent;
+  text-transform: capitalize;
+  transition: background-color 0.3s ease-in-out;
+  text-align: left;
+}
+.account-menu button:hover {
+  background-color: rgb(207, 207, 207);
+}
+
+@media (max-width: 850px) {
+  .search-cont .account-cart .account {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 0.5rem;
+    margin-top: 0.5rem;
+    font-size: clamp(0.6rem, 2vw, 0.8rem);
+  }
+  .account {
+    flex-direction: column;
+    width: 100vw;
+  }
+  .account-user {
+    width: 100%;
+  }
+  .account-user .user-icon {
+    height: 6rem;
+  }
+  .account-user .username {
+    font-size: 1.2rem;
+  }
+  .account-user .change-detail {
+    flex-direction: column;
+    align-items: center;
+  }
+  .account-user .change-username, .account-user .change-password {
+    width: 100%;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+  .account-user .change-username h4, .account-user .change-password h4 {
+    font-size: 1rem;
+  }
+  .account-user .change-password {
+    margin-top: 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.268);
+  }
+  .account-menu {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}/*# sourceMappingURL=Account-page.css.map */

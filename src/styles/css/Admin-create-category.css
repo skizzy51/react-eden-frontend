@@ -1,0 +1,160 @@
+.admin-category {
+  width: 80vw;
+  height: 85vh;
+  margin: auto;
+  margin-top: 1rem;
+}
+.admin-category .create-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.admin-category .create-head h2 {
+  max-width: 50vw;
+}
+.admin-category .admin-create-category {
+  background-color: white;
+  height: 90%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.admin-category .admin-create-category .category-name {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  padding-bottom: 0;
+}
+.admin-category .admin-create-category .category-name input {
+  width: 30%;
+  height: 2.5rem;
+  padding-left: 0.5rem;
+}
+.admin-category .admin-create-category .category-products {
+  height: 70%;
+  width: 99%;
+  margin: 0 auto;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+}
+.admin-category .admin-create-category .product-cont {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+}
+.admin-category .admin-create-category .product-cont .category-product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem;
+}
+.admin-category .admin-create-category .product-cont .category-product img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 5rem;
+  height: 6.5rem;
+}
+.admin-category .admin-create-category .product-cont .category-product p {
+  margin-bottom: 0;
+  font-weight: 500;
+  width: 25rem;
+  max-height: 3.5rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.admin-category .admin-create-category .product-cont .category-product span {
+  color: rgb(31, 168, 31);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 6rem;
+}
+.admin-category .admin-create-category .product-cont .category-product input[type=checkbox] {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.admin-category .admin-create-category .selected-cont {
+  border-top: 1px solid black;
+  height: 20%;
+  margin: 1rem;
+  margin-top: 1.5rem;
+  overflow-y: auto;
+}
+.admin-category .admin-create-category button {
+  cursor: pointer;
+  background-color: crimson;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  margin: 1rem auto;
+  border-radius: 10px;
+}
+
+@media (max-width: 630px) {
+  .admin-category .create-head {
+    padding: 0 0.5rem;
+  }
+  .admin-category .create-head h2 {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 768px) {
+  .admin-category {
+    width: 100vw;
+  }
+  .admin-category .admin-create-category {
+    height: 85%;
+    overflow-y: auto;
+  }
+  .admin-category .admin-create-category .category-name {
+    padding: 1rem 0.5rem;
+    padding-bottom: 0;
+  }
+  .admin-category .admin-create-category .category-name h4 {
+    font-size: 1rem;
+    max-width: 45%;
+  }
+  .admin-category .admin-create-category .category-name input {
+    width: 40%;
+  }
+  .admin-category .admin-create-category .category-products input[type=search] {
+    width: 80%;
+  }
+  .admin-category .admin-create-category .product-cont {
+    height: 50%;
+    overflow-x: auto;
+  }
+  .admin-category .admin-create-category .product-cont .category-product {
+    justify-content: unset;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .admin-category .admin-create-category .product-cont .category-product img {
+    flex-shrink: 0;
+  }
+  .admin-category .admin-create-category .product-cont .category-product p {
+    flex-shrink: 0;
+    margin: 0 0.5rem;
+    width: 17rem;
+    max-height: 4rem;
+  }
+  .admin-category .admin-create-category .product-cont .category-product span {
+    flex-shrink: 0;
+    margin-right: 1rem;
+  }
+  .admin-category .admin-create-category .product-cont .category-product input[type=checkbox] {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+  }
+  .admin-category .admin-create-category button {
+    margin: 0.5rem auto;
+  }
+}/*# sourceMappingURL=Admin-create-category.css.map */

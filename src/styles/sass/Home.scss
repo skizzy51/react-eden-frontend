@@ -1,0 +1,311 @@
+@import './variables';
+@import './mixins';
+
+
+.Carousel-cont{
+    margin-top: 10vh;
+
+    & .images{
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 30rem;
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            background-color: black;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            opacity: .4;
+        }
+    }
+
+    .carousel-caption {
+        top: 35%;
+        padding: 0;
+        letter-spacing: 3px;
+        & h3{
+            margin: 0;
+            font-size: 3rem;
+        }
+        & p{
+            margin: 1rem 0;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+
+
+.product-card{
+    cursor: pointer;
+    height: 22rem;
+    background-color: white;
+    border-radius: 5px;
+    width: 14rem;
+    overflow: hidden;
+    position: relative;
+    transition: box-shadow .3s ease-in-out;
+    margin: 0 .5rem;
+    margin-bottom: .5rem;
+    flex-shrink: 0;
+    &:hover{
+        box-shadow: $cardBoxShadow;
+    }
+    & p{
+        margin: .3rem 0;
+        @include text-ellipsis;
+    }
+    .fav-cart{
+        @include flex-direction(column);
+        top: .5rem;
+        right: 0rem;
+        margin-right: .5rem;
+        position: absolute;
+    }
+    .unmarked{
+        font-size: 1.2rem;
+        padding: .5rem;
+        color: white;
+        background-color: black;
+        margin: .2rem;
+        text-align: center;
+        transition: $allTransition;
+        &:hover{
+            background-color: white;
+            color: black;
+        }
+    }
+    .marked{
+        font-size: 1.1rem;
+        padding: .5rem;
+        color: black;
+        background-color: white;
+        margin: .2rem;
+        text-align: center;
+        transition: $allTransition;
+        &:hover{
+            background-color: black;
+            color: white;
+        }
+    }
+}
+.product-card-name{
+    color: black;
+}
+.product-card-img{
+    height: 15rem;
+    object-fit: cover;
+    width: 100%;
+}
+.product-card-price{
+    font-size: 1.3rem;
+    color: $priceColor;
+}
+.product-card-body{
+    padding: .5rem 1rem;
+}
+
+
+.normal-tab-container{
+    width: 90vw;
+    margin: auto;
+    margin-top: 3rem;
+    
+    .tab-head{
+        background-color: rgb(204, 43, 75);
+        margin-bottom: 0;
+        text-transform: capitalize;
+        text-align: center;
+        color: white;
+        padding: 1rem 0;
+    }
+    .tab-item-container{
+        background-color: white;
+        overflow-y: hidden;
+        height: fit-content;
+        padding: .5rem;
+
+        .product-tab{
+            display: flex;
+            overflow-x: auto;
+        }
+    }
+}
+
+.split-category{
+    margin: auto;
+    margin-top: 3rem;
+    width: 90vw;
+    height: fit-content;
+    background-color: white;
+    padding: 0 1rem;
+    padding-bottom: 1.5rem;
+
+    & h3{
+        text-align: center;
+        padding: 2rem 0;
+        font-weight: bold;
+    }
+    .category-section{
+        @include justify-content(space-between);
+        margin: 1rem 0;
+    }
+    .category{
+        color: white;
+        height: 17rem;
+        width: 48%;
+        margin: 0 1rem;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 5px;
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+        transition: background-size .3s ease-in-out;
+        &::after{
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-color: black;
+            opacity: .3;
+            z-index: -1;
+            border-radius: 5px;
+        }
+        &:hover{
+            background-size: 110%;
+        }
+        & h4{
+            padding: 1rem;
+            margin: 0;
+            text-transform: capitalize;
+        }
+    }
+}
+
+.split-product{
+    display: flex;
+    justify-content: space-between;
+    max-width: 90rem;
+    margin: auto;
+    margin-top: 3rem;
+
+    .tab{
+        @include flex-direction(column);
+        margin: 0 .5rem;
+        height: fit-content;
+        width: 50%;
+        background-color: white;
+        & h5{
+            text-transform: capitalize;
+            text-align: center;
+            font-weight: bold;
+            padding: 1rem 0;
+            margin: 0;
+        }
+        .item-cont{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+    .product-card{
+        height: 19rem;
+        width: 10rem;
+        margin: 1rem .5rem;
+    }
+    .product-card-img{
+        height: 11.5rem;
+    }
+    .product-card-price{
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .Carousel-cont{
+        .carousel-caption{
+            top: 25%;
+            & h3{
+                font-size: 2rem;
+            }
+            & p{
+                font-size: 1.1rem;
+            }
+        }
+    }
+
+    .normal-tab-container{
+        width: 100vw;
+        .product-card{
+            height: 18rem;
+            width: 10rem;
+        }
+        .product-card-img{
+            height: 11rem;
+        }
+        .product-card-body{
+            padding: .5rem;
+        }
+        .product-card-name{
+            font-size: 1rem;
+        }
+        .product-card-price{
+            font-size: 1.2rem;
+        }
+    }
+
+    .split-category{
+        width: 100vw;
+        & h3{
+            margin: 0;
+        }
+        .category-section{
+            margin: 0;
+            @include flex-direction(column);
+        }
+        .category{
+            width: 75vw;
+            margin: .5rem 0;
+            height: 35vh
+        }
+    }
+
+    .split-product{
+        @include flex-direction(column);
+        align-items: center;
+
+        .tab{
+            width: 100vw;
+            margin-top: 2rem;
+        }
+        .product-card{
+            height: 16rem;
+            width: 8rem;
+            margin: .5rem 1rem;
+        }
+        .product-card-img{
+            height: 9rem;
+        }
+        .product-card-body{
+            padding: .5rem;
+        }
+        .product-card-name{
+            font-size: .8rem;
+        }
+    }
+}
+
+@media (max-width: 1005px) {
+    .split-category{
+        .category{
+            background-size: cover;
+        }
+    }
+}

@@ -1,0 +1,120 @@
+.welcome-admin {
+  width: 80vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem auto;
+}
+
+.logout-show {
+  border: none;
+  background-color: crimson;
+  color: white;
+  padding: 0.7rem 1rem;
+  border-radius: 15px;
+  transition: background-color 0.3s ease-in-out;
+}
+.logout-show:hover {
+  background-color: rgb(139, 25, 48);
+}
+
+.logout-hide {
+  display: none;
+}
+
+.admin-dashboard {
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 15px;
+  width: 80vw;
+  height: auto;
+}
+.admin-dashboard h2 {
+  text-align: center;
+  padding: 1rem 0;
+}
+.admin-dashboard .dashboard-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.admin-dashboard .dashboard-actions .action-body {
+  position: relative;
+  cursor: pointer;
+  border-radius: 15px;
+  margin: 1.5rem 1rem;
+  height: 10rem;
+  width: 20rem;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+  z-index: 1;
+  transition: background-size 0.3s ease-in-out;
+}
+.admin-dashboard .dashboard-actions .action-body::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 45%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  border-radius: 15px;
+}
+.admin-dashboard .dashboard-actions .action-body:hover {
+  background-size: 100%;
+}
+.admin-dashboard .dashboard-actions .action-body h5 {
+  color: white;
+  margin: 1rem;
+  font-weight: normal;
+}
+.admin-dashboard .dashboard-actions button {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+@media (max-width: 768px) {
+  .welcome-admin {
+    justify-content: center;
+  }
+  .admin-dashboard {
+    width: 100vw;
+    padding-bottom: 1rem;
+  }
+  .admin-dashboard h2 {
+    padding: 0.5rem 0;
+    margin: 0;
+  }
+  .admin-dashboard .dashboard-actions .action-body {
+    width: 15rem;
+    background-size: 90%;
+  }
+  .admin-dashboard .dashboard-actions .action-body h4 {
+    font-size: 1.2rem;
+  }
+  .logout-hide {
+    display: flex;
+    margin: auto;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    border: none;
+    background-color: crimson;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  .logout-hide:hover {
+    background-color: rgb(139, 25, 48);
+  }
+  .logout-show {
+    display: none;
+  }
+}/*# sourceMappingURL=Admin-page.css.map */

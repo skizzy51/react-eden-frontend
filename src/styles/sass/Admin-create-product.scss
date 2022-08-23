@@ -1,0 +1,84 @@
+@import './mixins';
+@import './variables';
+
+.admin-create-product{
+    width: 70vw;
+    height: 80vh;
+    margin: auto;
+    margin-top: 1rem;
+
+    .create-head{
+        @include justify-content(space-between);
+        margin-bottom: 1rem;
+    }
+
+    .create-inputs{
+        height: 75vh;
+        margin: 0 auto;
+        background-color: white;
+        padding: 2rem 3rem;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .create-product-input{
+        @include alignCenterWithoutJustifyContent;
+        padding: 1.7rem 0;
+
+        & input{
+            margin: 0 1.5rem;
+            width: 55%;
+            padding-left: .5rem;
+            height: 2.5rem;
+        }
+    }
+    .create-product-tags{
+        @include flex-direction(column);
+        & p{
+            opacity: 80%;
+            font-size: .9rem;
+        }
+    }
+    .create-submit{
+        cursor: pointer;
+        border: none;
+        width: fit-content;
+        display: flex;
+        margin: auto;
+        background-color: crimson;
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: white;
+        padding: .5rem 1rem;
+        border-radius: 15px;
+        transition: $backgroundColorTransition;
+        &:hover{
+            background-color: $crimsonColorHoverChange;
+        }
+    }
+}
+
+
+@media (max-width: 375px) {
+    .admin-create-product .create-head h2{
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-create-product{
+        width: 100vw;
+        
+        .create-inputs{
+            padding: .5rem;
+        }
+        .create-product-input{
+            & h6{
+                font-size: .8rem;
+                margin: 0;
+            }
+        }
+        .image-upload{
+            margin: 1rem 0;
+        }
+    }
+}

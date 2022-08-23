@@ -1,0 +1,79 @@
+.admin-create-product {
+  width: 70vw;
+  height: 80vh;
+  margin: auto;
+  margin-top: 1rem;
+}
+.admin-create-product .create-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.admin-create-product .create-inputs {
+  height: 75vh;
+  margin: 0 auto;
+  background-color: white;
+  padding: 2rem 3rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.admin-create-product .create-product-input {
+  display: flex;
+  align-items: center;
+  padding: 1.7rem 0;
+}
+.admin-create-product .create-product-input input {
+  margin: 0 1.5rem;
+  width: 55%;
+  padding-left: 0.5rem;
+  height: 2.5rem;
+}
+.admin-create-product .create-product-tags {
+  display: flex;
+  flex-direction: column;
+}
+.admin-create-product .create-product-tags p {
+  opacity: 80%;
+  font-size: 0.9rem;
+}
+.admin-create-product .create-submit {
+  cursor: pointer;
+  border: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  margin: auto;
+  background-color: crimson;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  transition: background-color 0.3s ease-in-out;
+}
+.admin-create-product .create-submit:hover {
+  background-color: rgb(139, 25, 48);
+}
+
+@media (max-width: 375px) {
+  .admin-create-product .create-head h2 {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 768px) {
+  .admin-create-product {
+    width: 100vw;
+  }
+  .admin-create-product .create-inputs {
+    padding: 0.5rem;
+  }
+  .admin-create-product .create-product-input h6 {
+    font-size: 0.8rem;
+    margin: 0;
+  }
+  .admin-create-product .image-upload {
+    margin: 1rem 0;
+  }
+}/*# sourceMappingURL=Admin-create-product.css.map */

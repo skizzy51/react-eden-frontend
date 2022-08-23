@@ -1,0 +1,168 @@
+@import './mixins';
+@import './variables';
+
+.checkout-page{
+    margin: 0 auto;
+    width: 70vw;
+    height: 70vh;
+    margin-top: 3vh;
+
+    & h1{
+        text-decoration: underline;
+        margin-left: 1rem;
+        margin-bottom: 1rem;
+    }
+    .checkout-container{
+        background-color: white;
+        height: 100%;
+        border-radius: 15px;
+    }
+    .item-total{
+        display: flex;
+        padding: 1rem 1.5rem;
+        font-size: 1.3rem;
+        
+        .item{
+            width: 65%;
+            text-decoration: underline;
+        }
+        .total{
+            width: 30%;
+            text-align: center;
+            text-decoration: underline;
+        }
+    }
+    .checkout-item-container{
+        height: 65%;
+        overflow-y: auto;
+        &::-webkit-scrollbar{
+            width: 8px;
+        }
+        &::-webkit-scrollbar-track{
+            background-color: rgb(238, 238, 238);
+            border-radius: 5px;
+        }
+        &::-webkit-scrollbar-thumb{
+            background-color: rgb(193, 193, 193);
+            border-radius: 5px;
+        }
+
+        .checkout-product{
+            @include alignCenterWithoutJustifyContent;
+            padding: 1.5rem;
+        }
+        .product-container{
+            @include alignCenterWithoutJustifyContent;
+            width: 65%;
+            max-height: 7rem;
+            overflow: hidden;
+
+            & img{
+                width: 5rem;
+                height: 7rem;
+            }
+            .checkout-product-body{
+                @include flex-direction(column);
+                margin-left: 1.5rem;
+            }
+            .checkout-product-name{
+                max-width: 70%;
+                max-height: 5rem;
+                overflow: hidden;
+            }
+            .checkout-quantity-price{
+                font-weight: bold;
+                margin-top: .5rem;
+                display: flex;
+                .price{
+                    margin-left: 3rem;
+                }
+            }
+        }
+        .product-total{
+            width: 30%;
+            text-align: center;
+            font-size: 1.5rem;
+            color: rgb(31, 168, 31);
+        }
+    }
+    .subtotal{
+        @include justify-content(space-between);
+        padding: 2rem;
+
+        .price{
+            color: $priceColor;
+        }
+        .checkout-btn{
+            cursor: pointer;
+            background-color: crimson;
+            padding: .9rem 2rem;
+            font-size: 1.1rem;
+            border: none;
+            color: white;
+            border-radius: 30px;
+            transition: $backgroundColorTransition;
+            &:hover{
+                background-color: $crimsonColorHoverChange;
+            }
+        }
+    }
+}
+
+@media (max-width: 850px) {
+    .checkout{
+        width: 100vw;
+        margin: 0;
+        height: 80vh;
+        
+        & h1{
+            margin: 1rem 0;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        .checkout-container{
+            padding-top: 1rem;
+        }
+        .item-total{
+            display: none;
+            .item, .total{
+                font-size: 1rem;
+            }
+        }
+        .checkout-item-container{
+            height: 80%;
+
+            .checkout-product{
+                padding: 1rem .5rem;
+                flex-direction: column;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.259);
+            }
+            .product-container{
+                width: 100%;
+                align-items: flex-start;
+                max-height: unset;
+                .checkout-quantity-price{
+                    font-size: .9rem;
+                }
+            }
+        }
+        .subtotal{
+            padding: 1rem;
+
+            & h2{
+                font-size: 1.2rem;
+            }
+            .checkout-btn{
+                font-size: 1rem;
+                padding: .7rem 1.5rem;
+            }
+        }
+    }
+
+}
+@media (min-width: 800px) and (max-width: 850px) {
+    .checkout{
+        width: 80vw;
+        margin: auto;
+    }
+}

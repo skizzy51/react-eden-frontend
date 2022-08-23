@@ -1,0 +1,193 @@
+@import './mixins';
+@import './variables';
+
+.cart-page{
+    width: 90vw;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 0 auto;
+    margin-top: 20vh;
+
+    .head{
+        margin: 0;
+    }
+    .cart-container{
+        margin-top: 2rem;
+    }
+    .items-container{
+        @include justify-content(space-between);
+        margin-bottom: 2rem;
+        
+        .item{
+            display: flex;
+            width: 70%;
+        }
+        .item-text{
+            padding: 1rem;
+            max-width: 60%;
+            overflow: hidden;
+            & h5{
+                height: 4.4rem;
+                overflow: hidden;
+            }
+            .actions{
+                display: flex;
+                .first{
+                    margin-right: 1.5rem;
+                }
+            }
+            .unmarked{
+                @include alignCenterWithoutJustifyContent;
+                &:hover{
+                    cursor: pointer;
+                    color: crimson;
+                }
+                & span{
+                    font-size: .9rem;
+                }
+            }
+            .marked{
+                @include alignCenterWithoutJustifyContent;
+                color: crimson;
+                &:hover{
+                    cursor: pointer;
+                    color: black;
+                }
+                & span{
+                    font-size: .9rem;
+                }
+            }
+        }
+        & img{
+            width: 5.5rem;
+            object-fit: cover;
+        }
+
+        .price-quantity{
+            @include justify-content-no-align(space-between);
+            width: 25%;
+            .quantity-counter{
+                display: flex;
+                align-items: center;
+                height: 2.8rem;
+                width: 3.1rem;
+                overflow: hidden;
+                background-color: rgb(157, 157, 157);
+
+                .quantity{
+                    width: 2.2rem;
+                    white-space: nowrap;
+                    text-align: center;
+                    overflow-x: auto;
+                    color: white;
+                    font-weight: bold;
+                }
+                .quantity-control{
+                    @include flex-direction(column);
+                }
+                .action{
+                    background-color: white;
+                    margin: .8px;
+                    padding: 2px;
+                    font-size: 1rem;
+                    cursor: pointer;
+                }
+            }
+            .price{
+                color: $priceColor;
+                font-size: 1.3rem;
+            }
+        }
+    }
+    .total-cont{
+        @include justify-content(flex-end);
+        & h4{
+            font-weight: bold;
+        }
+    }
+    .total-price{
+        color: $priceColor;
+    }
+}
+
+.cart-checkout{
+    cursor: pointer;
+    border: none;
+    width: fit-content;
+    background-color: crimson;
+    color: white;
+    font-size: 1.3rem;
+    padding: .5rem 1.5rem;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: 3rem;
+    border-radius: 2rem;
+    transition: $backgroundColorTransition;
+    &:hover{
+        background-color: $crimsonColorHoverChange;
+    }
+}
+
+@media (max-width: 768px) {
+    .cart-page{
+        width: 100vw;
+        padding: 1rem .5rem;
+
+        .head{
+            padding-bottom: .5rem;
+        }
+        .items-container{
+            flex-direction: column;
+            margin: 0;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.245);
+
+            .item{
+                width: 100%;
+            }
+            .item-text{
+                width: 100%;
+
+                & h5{
+                    font-size: 1rem;
+                    overflow-y: auto;
+                }
+                .actions{
+                    justify-content: space-between;
+                }
+                .unmarked{
+                    font-size: 1.3rem;
+                    & span{
+                        display: none;
+                    }
+                }
+                .marked{
+                    font-size: 1.3rem;
+                    & span{
+                        display: none;
+                    }
+                }
+            }
+            & img{
+                width: 5.5rem;
+            }
+            .price-quantity{
+                width: 100%;
+                align-items: center;
+                justify-content: space-around;
+                margin-top: 1rem;
+            }
+        }
+        .total-cont{
+            margin-top: 1rem;
+            & h4{
+                font-size: 1.5rem;
+            }
+        }
+    }
+    .cart-checkout{
+        margin: auto;
+        margin-top: 2rem;
+    }
+}

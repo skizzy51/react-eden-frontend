@@ -1,0 +1,114 @@
+@import './mixins';
+@import './variables';
+
+.sign-container{
+    position: relative;
+    width: 30vw;
+    height: 100%;
+    margin: 0 auto;
+
+    .sign-in-cont{
+        color: black;
+        position: absolute;
+        width: 100%;
+
+        & h1{
+            font-size: 2.7rem;
+            margin: 1rem 0;
+            text-align: center;
+        }
+    }
+    .sign-up-cont{
+        display: none;
+        color: black;
+        position: absolute;
+        width: 100%;
+
+        & h1{
+            font-size: 2.7rem;
+            margin: 1rem 0;
+            text-align: center;
+        }
+    }
+
+
+    .sign-in{
+        background-color: white;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 70vh;
+        padding: 0 2rem;
+
+        & p{
+            margin: .5rem 0;
+            text-align: center;
+            margin-top: 1rem;
+
+            & span{
+                cursor: pointer;
+                color: blue;
+            }
+        }
+        .sign-input{
+            @include flex-direction(column);
+            margin: .5rem 0;
+            
+            & b{
+                margin: 0.5rem 0;
+            }
+            & input{
+                padding: .7rem .5rem;
+            }
+        }
+        .sign-button{
+            cursor: pointer;
+            margin: 0 auto;
+            margin-top: 2rem;
+            border: none;
+            color: white;
+            background-color: crimson;
+            border-radius: 10px;
+            padding: 1rem 0;
+            width: 70%;
+            font-size: 1.2rem;
+            transition: $backgroundColorTransition;
+            &:hover{
+                background-color: $crimsonColorHoverChange;
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .sign-container{
+        width: 90vw;
+
+        .sign-in-cont h1, .sign-up-cont h1{
+            font-size: 1.7rem;
+        }
+        .sign-in{
+            padding: 0 1.5rem;
+            .sign-button{
+                margin-top: 1rem;
+                font-size: 1rem;
+                padding: .8rem;
+            }
+            .sign-input b{
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+@media (min-width: 425px) and (max-width: 950px) {
+    .sign-container{
+        width: 60vw;
+        .sign-in .sign-button{
+            margin-top: 1rem;
+            font-size: 1rem;
+            padding: .9rem;
+        }
+    }
+}

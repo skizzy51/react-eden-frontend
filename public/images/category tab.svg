@@ -1,0 +1,11 @@
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" width="269.008" height="135.021" viewBox="0 0 269.008 135.021">
+  <g id="Layer_1" data-name="Layer 1">
+    <rect id="Rectangle_16" data-name="Rectangle 16" width="268.914" height="36.051" fill="#ed1c24"/>
+    <rect id="Rectangle_17" data-name="Rectangle 17" width="268.914" height="98.971" transform="translate(0 36.051)" fill="#fff"/>
+    <rect id="Rectangle_18" data-name="Rectangle 18" width="62.215" height="66.828" transform="translate(11.556 46.195)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+    <rect id="Rectangle_19" data-name="Rectangle 19" width="62.215" height="66.828" transform="translate(82.884 46.195)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+    <rect id="Rectangle_20" data-name="Rectangle 20" width="62.215" height="66.828" transform="translate(154.199 46.195)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="Path_2" data-name="Path 2" d="M43.48,66.828H0V0H43.48" transform="translate(225.528 46.195)" fill="#fff" stroke="#000" stroke-width="1"/>
+    <text id="Tab" transform="translate(122.956 22.581)" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="0.25" font-size="15" font-family="SegoeUI, Segoe UI" letter-spacing="-0.01em"><tspan x="0" y="0">T</tspan><tspan y="0" letter-spacing="0.05em">ab</tspan></text>
+  </g>
+</svg>

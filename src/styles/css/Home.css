@@ -1,0 +1,308 @@
+.Carousel-cont {
+  margin-top: 10vh;
+}
+.Carousel-cont .images {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 30rem;
+  position: relative;
+}
+.Carousel-cont .images::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+}
+.Carousel-cont .carousel-caption {
+  top: 35%;
+  padding: 0;
+  letter-spacing: 3px;
+}
+.Carousel-cont .carousel-caption h3 {
+  margin: 0;
+  font-size: 3rem;
+}
+.Carousel-cont .carousel-caption p {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+}
+
+.product-card {
+  cursor: pointer;
+  height: 22rem;
+  background-color: white;
+  border-radius: 5px;
+  width: 14rem;
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow 0.3s ease-in-out;
+  margin: 0 0.5rem;
+  margin-bottom: 0.5rem;
+  flex-shrink: 0;
+}
+.product-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.product-card p {
+  margin: 0.3rem 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.product-card .fav-cart {
+  display: flex;
+  flex-direction: column;
+  top: 0.5rem;
+  right: 0rem;
+  margin-right: 0.5rem;
+  position: absolute;
+}
+.product-card .unmarked {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  color: white;
+  background-color: black;
+  margin: 0.2rem;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+.product-card .unmarked:hover {
+  background-color: white;
+  color: black;
+}
+.product-card .marked {
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  color: black;
+  background-color: white;
+  margin: 0.2rem;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+.product-card .marked:hover {
+  background-color: black;
+  color: white;
+}
+
+.product-card-name {
+  color: black;
+}
+
+.product-card-img {
+  height: 15rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+
+.product-card-price {
+  font-size: 1.3rem;
+  color: rgb(31, 168, 31);
+}
+
+.product-card-body {
+  padding: 0.5rem 1rem;
+}
+
+.normal-tab-container {
+  width: 90vw;
+  margin: auto;
+  margin-top: 3rem;
+}
+.normal-tab-container .tab-head {
+  background-color: rgb(204, 43, 75);
+  margin-bottom: 0;
+  text-transform: capitalize;
+  text-align: center;
+  color: white;
+  padding: 1rem 0;
+}
+.normal-tab-container .tab-item-container {
+  background-color: white;
+  overflow-y: hidden;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0.5rem;
+}
+.normal-tab-container .tab-item-container .product-tab {
+  display: flex;
+  overflow-x: auto;
+}
+
+.split-category {
+  margin: auto;
+  margin-top: 3rem;
+  width: 90vw;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: white;
+  padding: 0 1rem;
+  padding-bottom: 1.5rem;
+}
+.split-category h3 {
+  text-align: center;
+  padding: 2rem 0;
+  font-weight: bold;
+}
+.split-category .category-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+.split-category .category {
+  color: white;
+  height: 17rem;
+  width: 48%;
+  margin: 0 1rem;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5px;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  transition: background-size 0.3s ease-in-out;
+}
+.split-category .category::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.3;
+  z-index: -1;
+  border-radius: 5px;
+}
+.split-category .category:hover {
+  background-size: 110%;
+}
+.split-category .category h4 {
+  padding: 1rem;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.split-product {
+  display: flex;
+  justify-content: space-between;
+  max-width: 90rem;
+  margin: auto;
+  margin-top: 3rem;
+}
+.split-product .tab {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0.5rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 50%;
+  background-color: white;
+}
+.split-product .tab h5 {
+  text-transform: capitalize;
+  text-align: center;
+  font-weight: bold;
+  padding: 1rem 0;
+  margin: 0;
+}
+.split-product .tab .item-cont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.split-product .product-card {
+  height: 19rem;
+  width: 10rem;
+  margin: 1rem 0.5rem;
+}
+.split-product .product-card-img {
+  height: 11.5rem;
+}
+.split-product .product-card-price {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .Carousel-cont .carousel-caption {
+    top: 25%;
+  }
+  .Carousel-cont .carousel-caption h3 {
+    font-size: 2rem;
+  }
+  .Carousel-cont .carousel-caption p {
+    font-size: 1.1rem;
+  }
+  .normal-tab-container {
+    width: 100vw;
+  }
+  .normal-tab-container .product-card {
+    height: 18rem;
+    width: 10rem;
+  }
+  .normal-tab-container .product-card-img {
+    height: 11rem;
+  }
+  .normal-tab-container .product-card-body {
+    padding: 0.5rem;
+  }
+  .normal-tab-container .product-card-name {
+    font-size: 1rem;
+  }
+  .normal-tab-container .product-card-price {
+    font-size: 1.2rem;
+  }
+  .split-category {
+    width: 100vw;
+  }
+  .split-category h3 {
+    margin: 0;
+  }
+  .split-category .category-section {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .split-category .category {
+    width: 75vw;
+    margin: 0.5rem 0;
+    height: 35vh;
+  }
+  .split-product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .split-product .tab {
+    width: 100vw;
+    margin-top: 2rem;
+  }
+  .split-product .product-card {
+    height: 16rem;
+    width: 8rem;
+    margin: 0.5rem 1rem;
+  }
+  .split-product .product-card-img {
+    height: 9rem;
+  }
+  .split-product .product-card-body {
+    padding: 0.5rem;
+  }
+  .split-product .product-card-name {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 1005px) {
+  .split-category .category {
+    background-size: cover;
+  }
+}/*# sourceMappingURL=Home.css.map */

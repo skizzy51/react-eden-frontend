@@ -1,0 +1,635 @@
+@import './variables';
+@import './mixins';
+
+
+.f-none{
+    display: none !important;
+}
+.eden{
+    background-color: white;
+    padding: .5rem 0;
+    @include justify-content-no-align(center);
+}
+
+.search-cont{
+    @include justify-content(space-between);
+    background-color: white;
+    padding: 1rem;
+
+    .logo{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+
+        img{
+            width: 10rem;
+        }
+    }
+    .open-nav{
+        font-size: 2rem;
+        cursor: pointer;
+        margin: 0 .5rem;
+    }
+    .search-bar{
+        display: flex;
+        align-self: center;
+
+        .s-bar{
+            width: 35vw;
+            padding: 0 1rem;
+        }
+        .search{
+            background-color: crimson;
+            padding: 10px 15px;
+            text-transform: uppercase;
+            font-size: 16px;
+            font-weight: 550;
+            cursor: pointer;
+            color: white;
+            transition: $backgroundColorTransition;
+            &:hover{
+                background-color: $crimsonColorHoverChange;
+            }
+        }
+    }
+    .account-cart{
+        @include alignCenterWithoutJustifyContent;
+
+        .account{
+            @include alignCenterWithoutJustifyContent;
+            color: black;
+            font-size: 15px;
+            cursor: pointer;
+            margin: 0 1rem;
+            &:hover{
+                color: crimson;
+            }
+        }
+        .cart{
+            @include alignCenterNoWrap;
+            background-color: crimson;
+            color: white;
+            border-radius: 10px;
+            padding: 5px;
+            cursor: pointer;
+            transition: $backgroundColorTransition;
+
+            &:hover{
+                background-color: $crimsonColorHoverChange;
+            }
+            & span{
+                @include alignCenterNoWrap
+            }
+            .cart-counter{
+                background-color: white;
+                color: crimson;
+                padding: 5px 8px;
+                border-radius: 8px;
+                margin: 0 .3rem;
+            }
+        }
+    }
+
+}
+
+.search-result{
+    width: 50vw;
+    max-height: 60vh;
+    overflow-y: auto;
+    background-color: white;
+    margin: auto;
+    margin-top: .3rem;
+    @include flex-direction (column);
+
+    .result-item{
+        cursor: pointer;
+        color: black;
+        padding: 1rem;
+        transition: background-color .3s ease-in-out;
+        font-weight: 550;
+        flex-shrink: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        &:hover{
+            background-color: #c9c9c9;
+        }
+    }
+}
+
+.sidenav {
+    height: 100%;
+    width: 30vw;
+    transform: translateX(-100%);
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: rgb(31, 31, 31);
+    color: white;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: transform .5s ease-in-out;
+
+    .sidenav-top{
+        margin: 1rem .5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .closeIcon{
+            padding: 0;
+            margin: 0 1rem;
+            font-size: 2rem;
+            font-weight: 800;
+            cursor: pointer;
+        }
+    }
+    .sidenav-signUp{
+        padding: .5rem;
+
+        & h5{
+            margin-bottom: 1rem;
+        }
+        & a{
+            border: none;
+            border-radius: 14px;
+            background-color: crimson;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+            padding: .5rem 1rem;
+            transition: $backgroundColorTransition;
+            &:hover{
+                background-color: $crimsonColorHoverChange;
+            }
+        }
+    }
+    .sidenav-button{
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        margin: 1rem 0;
+        padding: .7rem 3rem;
+        font-size: 1.3rem;
+        transition: $backgroundColorTransition;
+        cursor: pointer;
+        &:hover{
+            background-color: #4d4d4d;
+        }
+    }
+    .accordion-modified{
+        background-color: transparent;
+
+        &:hover{
+            background-color: #4d4d4d;
+        }
+        & div{
+            font-size: 1.3rem;
+        }
+        & button{
+            border: none;
+            color: white;
+            background-color: transparent;
+            padding: .7rem 3rem;
+            @include justify-content(space-between);
+            &::after{
+                display: none;
+            }
+        }
+    }
+    .body{
+        @include flex-direction(column);
+        text-align: center;
+        padding: 0;
+        .acc-button{
+            padding: 1rem 0;
+            color: white;
+            text-transform: capitalize;
+            cursor: pointer;
+            transition: $backgroundColorTransition;
+            &:hover{
+                background-color: #4d4d4d;
+            }
+        }
+    }
+    .logout{
+        border: none;
+        cursor: pointer;
+        padding: 0.7rem 1.3rem;
+        display: flex;
+        margin: 2rem auto;
+        background-color: crimson;
+        color: white;
+        border-radius: 30px;
+        transition: $backgroundColorTransition;
+        &:hover{
+            background-color: $crimsonColorHoverChange;
+        }
+    }
+}
+
+.cart-menu{
+    display: none;
+    z-index: 11;
+    background-color: white;
+    height: 85vh;
+    width: 30vw;
+    border-radius: 10px;
+    top: 12%;
+    right: .8rem;
+    margin: 0rem;
+    position: fixed;
+
+    .cart-menu-head{
+        @include justify-content(space-between);
+        margin: 1.5rem;
+        & h5{
+            margin: 0;
+        }
+        & :last-child{
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+    }
+
+    .item-container{
+        overflow-y: auto;
+        max-height: 45vh;
+        padding: 0 1rem;
+
+        .item{
+            @include justify-content(space-between);
+            margin: 1rem 0;
+
+            .name-price{
+                width: 50%;
+                .name{
+                    font-weight: 650;
+                    padding: 0;
+                    margin: 0;
+                }
+                .price{
+                    color: $priceColor;
+                    margin: 0;
+                }
+            }
+            .quantity-counter{
+                display: flex;
+                align-items: center;
+                height: 2.8rem;
+                width: 3.1rem;
+                overflow: hidden;
+                background-color: rgb(157, 157, 157);
+
+                .quantity{
+                    width: 2.2rem;
+                    white-space: nowrap;
+                    text-align: center;
+                    overflow-x: auto;
+                    color: white;
+                    font-weight: bold;
+                }
+                .quantity-control{
+                    @include flex-direction(column);
+                }
+                .action{
+                    background-color: white;
+                    margin: .8px;
+                    padding: 2px;
+                    font-size: 1rem;
+                    cursor: pointer;
+                }
+            }
+            .delete{
+                cursor: pointer;
+                padding: .3rem;
+                border-radius: .3rem;
+                transition: $backgroundColorTransition;
+                &:hover{
+                    background-color: crimson;
+                    color: white;
+                }
+            }
+        }
+    }
+    .total{
+        @include justify-content(space-around);
+        padding: .5rem;
+        & h4{
+            margin: 0;
+        }
+        .price{
+            color: $priceColor;
+            font-weight: bold;
+        }
+    }
+    .cart-actions{
+        @include flex-direction(column);
+        & button{
+            width: 80%;
+            margin: .3rem auto;
+            border-radius: .5rem;
+            font-size: 1.4rem;
+            padding: .5rem 0;
+        }
+        .checkout{
+            background-color: crimson;
+            color: white;
+            border: none;
+            transition: $backgroundColorTransition;
+            &:hover{
+                background-color: $crimsonColorHoverChange;
+            }
+        }
+    }
+}
+
+
+
+
+
+.footer{
+    background-color: #292929;
+    color: white;
+    z-index: 1;
+    margin-top: 3rem;
+    width: 100%;
+
+    .head{
+        display: flex;
+        justify-content: space-around;
+        background-color: #424242;
+        padding: 3rem 0;
+        & img{
+            height: 4.5rem;
+        }
+        &p{
+            font-size: .7rem;
+            margin-bottom: 1rem !important;
+        }
+        .input{
+            display: flex;
+            align-self: center;
+            & input{
+                padding: .5rem .3rem;
+                width: 40vw;
+                border: none;
+                border-radius: 0rem;
+            }
+            & span{
+                background-color: crimson;
+                padding: 10px 15px;
+                text-transform: uppercase;
+                font-size: 16px;
+                font-weight: 550;
+                cursor: pointer;
+                color: white;
+                transition: $backgroundColorTransition;
+                &:hover{
+                    background-color: $crimsonColorHoverChange;
+                }
+            }
+        }
+    }
+    .container{
+        @include justify-content(space-evenly);
+        padding: 3rem 0;
+        .item{
+            @include flex-direction(column);
+            flex-wrap: nowrap;
+            margin: 0 1rem;
+            & a{
+                width: max-content;
+                color: rgb(182, 182, 182);
+                text-decoration: none;
+                font-size: .8rem;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    .contact-cont{
+        text-align: center;
+        .social{
+            cursor: pointer;
+            background-color: #424242;
+            font-size: 1.5rem;
+            padding: .7rem;
+            margin: .4rem .7rem;
+            border-radius: .6rem;
+            transition: $backgroundColorTransition;
+            &:hover{
+                background-color: white;
+                color: #292929;
+            }
+        }
+    }
+    .copyright{
+        text-align: center;
+        padding: 2rem;
+        font-size: .7rem;
+        margin: 0;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .f-none{
+        display: block !important;
+    }
+
+    .eden img{
+        width: 10rem;
+    }
+
+    .sidenav{
+        width: 100vw;
+        & img{
+            width: 9rem;
+            height: 3rem;
+        }
+        .sidenav-signUp h3{
+            font-size: 1rem;
+            padding: 0rem 1rem;
+        }
+        .sidenav-button{
+            text-align: center;
+            display: block;
+            align-items: center;
+        }
+        .accordion-modified {
+            & button{
+                flex-direction: column;
+            }
+            .fa-plus{
+                display: none;
+            }
+        }
+    }
+
+    .search-cont{
+        flex-direction: column;
+        padding: .5rem .3rem;
+        .logo{
+            margin-right: auto;
+        }
+        .open-nav{
+            font-size: 1.5rem;
+            padding: .4rem;
+            margin: 0;
+        }
+        .logo img{
+            width: 7rem;
+        }
+        .search-bar{
+            margin: 1rem 0 .5rem;
+            .s-bar{
+                width: 70vw;
+                height: 2.5rem;
+                &::placeholder{
+                    font-size: .8rem;
+                }
+            }
+            .search{
+                font-size: .8rem;
+                display: flex;
+                align-items: center; //check this by removing
+            }
+        }
+        .account-cart{
+            position: absolute;
+            right: 0;
+            margin-right: .4rem;
+            .account, .cart{
+                font-size: .6rem;
+            }
+            .cart{
+                padding: .15rem;
+            }
+            .account{
+                margin: 0;
+                margin-right: .3rem;
+                .fa-user{
+                    margin: 0 !important;
+                }
+            }
+        }
+    }
+
+    .search-result{
+        width: 80vw;
+    }
+
+    .cart-menu{
+        width: 85vw;
+        right: .3rem;
+        top: 17vh;
+        max-height: 80vh;
+        padding-bottom: 1rem;
+
+        .cart-menu-head{
+            margin: 1rem;
+        }
+        .item-container{
+            max-height: 40vh;
+            .item .name-price .name{
+                font-size: .9rem;
+            }
+        }
+    }
+
+    .footer{
+        .head{
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            padding-top: 2rem;
+            & img{
+                display: none;
+            }
+            .input{
+                justify-content: center;
+                & input{
+                    width: 60vw;
+                    border-radius: .3rem 0 0 .3rem;
+                    &::placeholder{
+                        font-size: .8rem;
+                        padding-left: .5rem;
+                    }
+                }
+                & span{
+                    border-radius: 0 .3rem .3rem 0;
+                    font-size: .7rem;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+
+        }
+        .container{
+            flex-wrap: wrap;
+            .item{
+                margin: 1.2rem .9rem;
+                & h6{
+                    font-weight: 400;
+                    text-decoration: underline;
+                    font-size: .8rem;
+                }
+                & a{
+                    display: none;
+                }
+            }
+        }
+        .contact-cont{
+            &h5{
+                font-size: 1rem;
+            }
+            .social{
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 769px) and (max-width: 900px) {
+    .sidenav{
+        width: 40vw;
+        & img{
+            width: 8rem;
+        }
+        .sidenav-signUp h3{
+            font-size: 1rem;
+        }
+        .sidenav-button, .accordion-modified{
+            font-size: clamp(1rem, 50%, 1.3rem);
+        }
+    }
+    .search-cont{
+        padding: 1rem 0;
+        .logo img{
+            width: clamp(7rem, 50%, 8rem);
+        }
+        .search{
+            padding: .5rem;
+            font-size: 13px;
+        }
+        .account-cart{
+            .account, .cart{
+                font-size: 12px;
+            }
+        }
+    }
+    .search-result{
+        width: 70vw;
+    }
+
+    .cart-menu{
+        width: 60vw;
+    }
+
+    .footer .head img{
+        display: none;
+    }
+}

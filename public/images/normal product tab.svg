@@ -1,0 +1,15 @@
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" width="262.114" height="168.927" viewBox="0 0 262.114 168.927">
+  <g id="Layer_1" data-name="Layer 1">
+    <rect id="Rectangle_41" data-name="Rectangle 41" width="262.084" height="43.335" fill="red"/>
+    <rect id="Rectangle_42" data-name="Rectangle 42" width="262.084" height="125.591" transform="translate(0 43.335)" fill="#fff"/>
+    <rect id="Rectangle_43" data-name="Rectangle 43" width="74.117" height="95.636" transform="translate(6.798 57.135)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="Line_1" data-name="Line 1" x2="74.117" transform="translate(6.798 128.774)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+    <rect id="Rectangle_44" data-name="Rectangle 44" width="74.117" height="95.636" transform="translate(89.23 57.135)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="Line_2" data-name="Line 2" x2="74.117" transform="translate(89.23 128.774)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+    <rect id="Rectangle_45" data-name="Rectangle 45" width="74.117" height="95.636" transform="translate(170.484 57.135)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="Line_3" data-name="Line 3" x2="74.117" transform="translate(170.484 128.774)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="Path_1" data-name="Path 1" d="M11.73,95.649H0V0H11.73" transform="translate(250.384 57.135)" fill="#fff" stroke="#000" stroke-width="1"/>
+    <text id="Tab" transform="translate(114.785 26.942)" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="0.25" font-size="15" font-family="SegoeUI, Segoe UI" letter-spacing="-0.01em"><tspan x="0" y="0">T</tspan><tspan y="0" letter-spacing="0.05em">ab</tspan></text>
+    <path id="Path_3" data-name="Path 3" d="M262.114,128.774H250.022" fill="none" stroke="#000" stroke-width="1"/>
+  </g>
+</svg>

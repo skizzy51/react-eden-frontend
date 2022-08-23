@@ -1,0 +1,229 @@
+.admin-inventory {
+  width: 90vw;
+  height: 80vh;
+  margin: auto;
+  margin-top: 1rem;
+}
+.admin-inventory .admin-inventory-search {
+  display: flex;
+  width: 40vw;
+  padding-left: 1rem;
+  height: 2.5rem;
+}
+.admin-inventory .admin-inventory-body {
+  background-color: white;
+  height: 85%;
+  border-radius: 10px;
+  padding: 2rem;
+}
+.admin-inventory .admin-inventory-body .admin-inventory-head {
+  display: flex;
+}
+.admin-inventory .admin-inventory-body .admin-inventory-item {
+  width: 45rem;
+  text-decoration: underline;
+}
+.admin-inventory .admin-inventory-body .admin-inventory-quantity {
+  width: 12rem;
+  text-align: center;
+  text-decoration: underline;
+}
+.admin-inventory .admin-inventory-body .admin-inventory-price {
+  width: 12rem;
+  text-align: center;
+  text-decoration: underline;
+}
+.admin-inventory .admin-inventory-body .admin-inventory-action {
+  width: 8rem;
+}
+.admin-inventory .admin-inventory-body .admin-inventory-products {
+  overflow: auto;
+  height: 90%;
+}
+.admin-inventory .admin-inventory-body .admin-inventory-products .inventory-product {
+  display: flex;
+  padding: 0.5rem 0;
+}
+.admin-inventory .admin-inventory-body .admin-inventory-products .inventory-img-name {
+  width: 45rem;
+  display: flex;
+  flex-shrink: 0;
+}
+.admin-inventory .admin-inventory-body .admin-inventory-products .inventory-img-name img {
+  height: 8rem;
+  width: 6rem;
+}
+.admin-inventory .admin-inventory-body .admin-inventory-products .inventory-img-name p {
+  max-height: 8rem;
+  max-width: 33rem;
+  font-size: 1.1rem;
+  margin-left: 0.5rem;
+  margin-bottom: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.admin-inventory .admin-inventory-body .admin-inventory-products .inventory-quantity {
+  width: 12rem;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.admin-inventory .admin-inventory-body .admin-inventory-products .inventory-quantity span {
+  background-color: rgb(216, 216, 216);
+  padding: 0.8rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 8rem;
+  border-radius: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-bottom: 0.5rem;
+}
+.admin-inventory .admin-inventory-body .admin-inventory-products .inventory-quantity .inventory-quantity-control {
+  display: flex;
+  align-items: center;
+}
+.admin-inventory .admin-inventory-body .admin-inventory-products .inventory-quantity .inventory-quantity-control input {
+  height: 2rem;
+  width: 3.5rem;
+}
+.admin-inventory .admin-inventory-body .admin-inventory-products .inventory-quantity .inventory-quantity-control button {
+  height: 2rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.admin-inventory .admin-inventory-body .admin-inventory-products .inventory-price {
+  width: 12rem;
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  text-align: center;
+  color: green;
+  margin-top: 0.5rem;
+}
+.admin-inventory .admin-inventory-body .admin-inventory-products .inventory-action {
+  width: 8rem;
+  flex-shrink: 0;
+  text-align: center;
+}
+.admin-inventory .admin-inventory-body .admin-inventory-products .inventory-delete {
+  cursor: pointer;
+  background-color: crimson;
+  color: white;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  padding: 0.3rem 1.5rem;
+  margin: 0 auto;
+  transition: background-color 0.3s ease-in-out;
+}
+.admin-inventory .admin-inventory-body .admin-inventory-products .inventory-delete:hover {
+  background-color: rgb(139, 25, 48);
+}
+.admin-inventory .admin-inventory-body .admin-inventory-products .inventory-delete p {
+  text-align: center;
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.admin-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.admin-dropdown {
+  position: relative;
+  z-index: 10;
+}
+.admin-dropdown .dropdown-head {
+  background-color: rgb(235, 235, 235);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  width: 7rem;
+  cursor: pointer;
+}
+.admin-dropdown .dropdown-options-close {
+  display: none;
+}
+.admin-dropdown .dropdown-options-open {
+  background-color: rgb(235, 235, 235);
+  width: inherit;
+  position: absolute;
+  top: 130%;
+  right: 1vw;
+}
+.admin-dropdown .dropdown-options-open div {
+  color: black;
+  white-space: nowrap;
+  padding: 1rem 0.5rem;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+}
+.admin-dropdown .dropdown-options-open div:hover {
+  background-color: rgb(152, 152, 152);
+}
+
+@media (max-width: 950px) {
+  .admin-head {
+    flex-direction: column;
+    padding: 0 0.5rem;
+  }
+  .admin-head h2 {
+    max-width: 50vw;
+  }
+  .admin-dropdown {
+    position: absolute;
+    right: 0.5rem;
+  }
+  .admin-dropdown .dropdown-head {
+    width: 5rem;
+  }
+  .admin-inventory {
+    width: 100vw;
+  }
+  .admin-inventory .admin-inventory-search {
+    width: 80vw;
+    margin: 0 auto;
+    margin-top: 1rem;
+  }
+  .admin-inventory .admin-inventory-body {
+    padding: 1rem;
+  }
+  .admin-inventory .admin-inventory-body .admin-inventory-head {
+    display: none;
+  }
+  .admin-inventory .admin-inventory-body .admin-inventory-products {
+    width: 100%;
+  }
+  .admin-inventory .admin-inventory-body .admin-inventory-products .inventory-img-name {
+    width: 25rem;
+  }
+  .admin-inventory .admin-inventory-body .admin-inventory-products .inventory-img-name img {
+    height: 5rem;
+    width: 4rem;
+  }
+  .admin-inventory .admin-inventory-body .admin-inventory-products .inventory-quantity {
+    width: 9rem;
+  }
+  .admin-inventory .admin-inventory-body .admin-inventory-products .inventory-price {
+    width: 9rem;
+  }
+  .admin-inventory .admin-inventory-body .admin-inventory-products .inventory-delete {
+    padding: 0.2rem 1rem;
+  }
+}/*# sourceMappingURL=Admin-inventory.css.map */

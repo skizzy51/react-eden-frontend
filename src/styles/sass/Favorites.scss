@@ -3,7 +3,7 @@
 
 .account .favorites{
     background-color: white;
-    width: 80%;
+    width: 100%;
     border-radius: 10px;
     padding-bottom: 3rem;
     @include alignCenterWithoutJustifyContent;
@@ -56,7 +56,7 @@
 }
 
 @media (max-width: 850px) {
-    .account-user .fav-item-cont{
+    .account .fav-item-cont{
         width: 9rem;
         height: 15rem;
         & img{

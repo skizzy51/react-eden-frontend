@@ -1,6 +1,6 @@
 .account .favorites {
   background-color: white;
-  width: 80%;
+  width: 100%;
   border-radius: 10px;
   padding-bottom: 3rem;
   display: flex;
@@ -54,14 +54,14 @@
 }
 
 @media (max-width: 850px) {
-  .account-user .fav-item-cont {
+  .account .fav-item-cont {
     width: 9rem;
     height: 15rem;
   }
-  .account-user .fav-item-cont img {
+  .account .fav-item-cont img {
     height: 9rem;
   }
-  .account-user .fav-item-cont button {
+  .account .fav-item-cont button {
     font-size: 0.75rem;
   }
 }/*# sourceMappingURL=Favorites.css.map */

@@ -88,16 +88,16 @@ function App() {
 
 
   useEffect(()=>{
-    axios.get('https://eden-react-backend.herokuapp.com/shop/item')
+    axios.get('https://react-eden-backend.vercel.app/shop/item')
     .then(res =>{setProducts(res.data.data)}).catch(err => {return})
 
-    axios.get('https://eden-react-backend.herokuapp.com/shop/category')
+    axios.get('https://react-eden-backend.vercel.app/shop/category')
     .then(res =>{setCategories(res.data.data)}).catch(err => {return})
 
   }, [])
   
   useEffect(()=>{
-    axios.get('https://eden-react-backend.herokuapp.com/shop/getUser', {
+    axios.get('https://react-eden-backend.vercel.app/shop/getUser', {
         headers : { 'authorization' : `Bearer ${token}` }
     }).then(res => {setUser(prev => res.data.user)}).catch(err => {return})
   }, [token])

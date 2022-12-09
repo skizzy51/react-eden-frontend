@@ -55,7 +55,7 @@ export function Product () {
 
     async function addFavorites (id) {
         if (!token) {return alert('User must be signed in')}
-        let firstRequest = await axios.post('https://eden-react-backend.herokuapp.com/shop/markFavorite', {id : id}, {
+        let firstRequest = await axios.post('https://react-eden-backend.vercel.app/shop/markFavorite', {id : id}, {
             headers : {
                 'authorization' : `Bearer ${token}`,
                 'Content-Type' : 'application/json'
@@ -68,7 +68,7 @@ export function Product () {
             return alert('Item added to favorites')
         }
         
-        let secondRequest = await axios.post('https://eden-react-backend.herokuapp.com/shop/unmarkFavorite', {id : id}, {
+        let secondRequest = await axios.post('https://react-eden-backend.vercel.app/shop/unmarkFavorite', {id : id}, {
             headers : {
                 'authorization' : `Bearer ${token}`,
                 'Content-Type' : 'application/json'

@@ -18,7 +18,7 @@ export function InventoryProduct (props) {
                 id : props.item._id,
                 quantity : Number(inputQuantity)
             }
-            await axios.post('https://eden-react-backend.herokuapp.com/shop/update/quantity', data, {
+            await axios.post('https://react-eden-backend.vercel.app/shop/update/quantity', data, {
                 headers : { 
                     'authorization' : `Bearer ${token}`, 
                     'Content-Type': 'application/json'
@@ -43,7 +43,7 @@ export function InventoryProduct (props) {
 
     async function deleteProduct () {
         AdminUserVerification()
-        let response = await axios.post('https://eden-react-backend.herokuapp.com/shop/item/delete', {id : props.item._id}, {
+        let response = await axios.post('https://react-eden-backend.vercel.app/shop/item/delete', {id : props.item._id}, {
             headers : {
                 'authorization' : `Bearer ${token}`,
                 'Content-Type': 'application/json'

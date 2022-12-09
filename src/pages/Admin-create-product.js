@@ -67,7 +67,7 @@ export function AdminCreateProduct () {
             formData.append('file', file)
         }
 
-        let response = await axios.post('https://eden-react-backend.herokuapp.com/shop/item', formData, {
+        let response = await axios.post('https://react-eden-backend.vercel.app/shop/item', formData, {
             headers : { 'authorization' : `Bearer ${token}` }
         }).then(res => res.data).catch(err=>{return})
 

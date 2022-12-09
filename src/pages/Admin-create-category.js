@@ -77,7 +77,7 @@ export function AdminCreateCategory () {
             name : categoryName,
             items : itemsArray
         }
-        let response = await axios.post('https://eden-react-backend.herokuapp.com/shop/category', data, {
+        let response = await axios.post('https://react-eden-backend.vercel.app/shop/category', data, {
             headers : {
                 'authorization' : `Bearer ${token}`,
                 'Content-Type' : 'application/json'

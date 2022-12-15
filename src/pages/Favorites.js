@@ -21,7 +21,7 @@ export function Favorites () {
 
     async function removeFromFavorites (id) {
         UserVerification()
-        let response = await axios.post('https://react-eden-backend.vercel.app/shop/unmarkFavorite', {id : id}, {
+        let response = await axios.post('https://eden-backend.onrender.com/shop/unmarkFavorite', {id : id}, {
             headers : {
                 'authorization' : `Bearer ${token}`,
                 'Content-Type' : 'application/json'
@@ -35,7 +35,7 @@ export function Favorites () {
     }
     
     useEffect(()=>{
-        axios.get('https://react-eden-backend.vercel.app/shop/allFavorites', {
+        axios.get('https://eden-backend.onrender.com/shop/allFavorites', {
             headers : { 'authorization' : `Bearer ${token}` }
         }).then(res => setFavoritesResponse(res.data))
     }, [token])

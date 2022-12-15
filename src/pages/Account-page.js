@@ -51,7 +51,7 @@ export function AccountPage () {
             return alert('Username must be at least 4 characters long')
         }
 
-        let response = await axios.post('https://react-eden-backend.vercel.app/shop/update/username', {username : newUsername}, {
+        let response = await axios.post('https://eden-backend.onrender.com/shop/update/username', {username : newUsername}, {
             headers : {
                 'authorization' : `Bearer ${token}`,
                 'Content-Type' : 'application/json'
@@ -79,7 +79,7 @@ export function AccountPage () {
             oldPassword : oldPassword,
             newPassword : newPassword1
         }
-        let response = await axios.post('https://react-eden-backend.vercel.app/shop/update/password', passwords, {
+        let response = await axios.post('https://eden-backend.onrender.com/shop/update/password', passwords, {
             headers : {
                 'authorization' : `Bearer ${token}`,
                 'Content-Type' : 'application/json'
@@ -97,7 +97,7 @@ export function AccountPage () {
     }
 
     async function deleteUser () {
-        let response = await fetch('https://react-eden-backend.vercel.app/shop/user', {
+        let response = await fetch('https://eden-backend.onrender.com/shop/user', {
             method : 'delete',
             headers : {
                 'authorization' : `Bearer ${token}`

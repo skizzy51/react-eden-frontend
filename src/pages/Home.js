@@ -14,16 +14,16 @@ export function Home () {
     const [splitCategoryTab, setSplitCategoryTab] = useState()
     const [loading, setLoading] = useState(false)
     useEffect(()=> {
-        axios.get('https://react-eden-backend.vercel.app/shop/normal-product-tab')
+        axios.get('https://eden-backend.onrender.com/shop/normal-product-tab')
         .then(res => setNormalProductTab(res.data.data)).catch(err => {return})
 
-        axios.get('https://react-eden-backend.vercel.app/shop/split-product-tab')
+        axios.get('https://eden-backend.onrender.com/shop/split-product-tab')
         .then(res => setSplitProductTab(res.data.data)).catch(err => {return})
 
-        axios.get('https://react-eden-backend.vercel.app/shop/normal-category-tab')
+        axios.get('https://eden-backend.onrender.com/shop/normal-category-tab')
         .then(res => setNormalCategoryTab(res.data.data)).catch(err => {return})
         
-        axios.get('https://react-eden-backend.vercel.app/shop/split-category-tab')
+        axios.get('https://eden-backend.onrender.com/shop/split-category-tab')
         .then(res => setSplitCategoryTab(res.data.data)).catch(err => {return})
         
         setLoading(true)

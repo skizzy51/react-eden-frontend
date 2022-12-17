@@ -5,7 +5,7 @@ export async function AdminUserVerification () {
     if (!token) {
         window.location.assign('/')
     }
-    let response = await axios.get('https://eden-backend.cyclic.app/shop/getUser', {
+    let response = await axios.get('https://eden-backend.onrender.com/shop/getUser', {
         headers : { 'authorization' : `Bearer ${token}` }
     }).then(res => res.data).catch(err => {return})
     if (!response?.user || response?.user.role !== 'admin') {
@@ -21,7 +21,7 @@ export async function UserVerification () {
         window.location.assign('/')
         return
     }
-    let response = await axios.get('https://eden-backend.cyclic.app/shop/getUser', {
+    let response = await axios.get('https://eden-backend.onrender.com/shop/getUser', {
         headers : { 'authorization' : `Bearer ${token}` }
     }).then(res => res.data).catch(err => {return})
 

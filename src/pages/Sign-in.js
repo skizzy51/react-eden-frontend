@@ -24,7 +24,7 @@ export function SignInPage () {
 
     useEffect(()=>{
         async function verifyUser () {
-            let response = await axios.get('https://eden-backend.cyclic.app/shop/getUser', {
+            let response = await axios.get('https://eden-backend.onrender.com/shop/getUser', {
                 headers : { 'authorization' : `Bearer ${token}` }
             }).then(res => res.data).catch(err => {return})
     
@@ -70,13 +70,13 @@ export function SignInPage () {
             password : password
         }
 
-        let response = await axios.post('https://eden-backend.cyclic.app/shop/loginUser', data, {
+        let response = await axios.post('https://eden-backend.onrender.com/shop/loginUser', data, {
             headers : { 'Content-Type' : 'application/json' }
         }).then(res => res.data).catch(err => {return})
 
         if (response?.message === 'logged in') {
             localStorage.setItem('token', response?.token)
-            let verify = await axios.get('https://eden-backend.cyclic.app/shop/getUser', {
+            let verify = await axios.get('https://eden-backend.onrender.com/shop/getUser', {
                 headers : { 'authorization' : `Bearer ${response?.token }`}
             }).then(res => res.data)
             if (verify.user.role === 'admin') {
@@ -105,14 +105,14 @@ export function SignInPage () {
                 username : createUsername,
                 password : createPassword1
             }
-            let response = await axios.post('https://eden-backend.cyclic.app/shop/user', data, {
+            let response = await axios.post('https://eden-backend.onrender.com/shop/user', data, {
                 headers : { 'Content-Type' : 'application/json' }
             }).then(res => res.data).catch(err => {return})
 
             console.log(response)
             if (response.message === 'User Created and signed in') {
                 localStorage.setItem('token', response.token)
-                let verify = await axios.get('https://eden-backend.cyclic.app/shop/getUser', {
+                let verify = await axios.get('https://eden-backend.onrender.com/shop/getUser', {
                     headers : {
                         'authorization' : `Bearer ${response.token}`
                     }

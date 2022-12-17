@@ -99,7 +99,7 @@ export function CreateSplitCategoryTab () {
         IdList.forEach(id => formData.append('categories', id))
         filesArray.forEach(image => formData.append('file', image))
         
-        let response = await fetch('https://eden-backend.cyclic.app/shop/split-category-tab',{
+        let response = await fetch('https://eden-backend.onrender.com/shop/split-category-tab',{
             method : 'post',
             headers : {
                 'authorization' : `Bearer ${token}`

@@ -201,7 +201,7 @@ export function AdminAddProduct () {
             tabName : normalProductTabName,
             items : tabItems
         }
-        let response = await axios.post('https://eden-backend.onrender.com/shop/normal-product-tab', data, {
+        let response = await axios.post('https://eden-backend.cyclic.app/shop/normal-product-tab', data, {
             headers : {
                 'authorization' : `Bearer ${token}`,
                 'Content-Type' : 'application/json'
@@ -245,7 +245,7 @@ export function AdminAddProduct () {
                 items : tabItems2
             }
         }
-        let response = await axios.post('https://eden-backend.onrender.com/shop/split-product-tab', data, {
+        let response = await axios.post('https://eden-backend.cyclic.app/shop/split-product-tab', data, {
             headers : {
                 'authorization' : `Bearer ${token}`,
                 'Content-Type' : 'application/json'
@@ -273,7 +273,7 @@ export function AdminAddProduct () {
             }
         }
         if (selectTag.current.value.length > 0) {
-            let response = await axios.post('https://eden-backend.onrender.com/shop/normal-category-tab', {category : selectTag.current.id}, {
+            let response = await axios.post('https://eden-backend.cyclic.app/shop/normal-category-tab', {category : selectTag.current.id}, {
                 headers : {
                     'authorization' : `Bearer ${token}`,
                     'Content-Type' : 'application/json'

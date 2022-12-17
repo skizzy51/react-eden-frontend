@@ -77,7 +77,7 @@ export function AdminCreateCategory () {
             name : categoryName,
             items : itemsArray
         }
-        let response = await axios.post('https://eden-backend.onrender.com/shop/category', data, {
+        let response = await axios.post('https://eden-backend.cyclic.app/shop/category', data, {
             headers : {
                 'authorization' : `Bearer ${token}`,
                 'Content-Type' : 'application/json'

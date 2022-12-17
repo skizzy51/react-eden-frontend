@@ -47,7 +47,7 @@ export function Cart () {
     async function addFavorites (id) {
         if (!user) { return alert('User must be logged in') }
         UserVerification()
-        let markfav = await axios.post('https://eden-backend.onrender.com/shop/markFavorite', {id : id}, {
+        let markfav = await axios.post('https://eden-backend.cyclic.app/shop/markFavorite', {id : id}, {
             headers : {
                 'authorization' : `Bearer ${token}`,
                 'Content-Type' : 'application/json'
@@ -64,7 +64,7 @@ export function Cart () {
 
     async function removeFavorites (id) {
         UserVerification()
-        let unmarkFav = await axios.post('https://eden-backend.onrender.com/shop/unmarkFavorite', {id : id}, {
+        let unmarkFav = await axios.post('https://eden-backend.cyclic.app/shop/unmarkFavorite', {id : id}, {
             headers : {
                 'authorization' : `Bearer ${token}`,
                 'Content-Type' : 'application/json'
